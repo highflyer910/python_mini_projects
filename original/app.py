@@ -9,7 +9,7 @@ def translate(w):
 	else:
 		print("The word doesn't exist. Please double check it.")
 
-word = input("Enter word: ")
+word = input("Enter your word: ")
 
 print(translate(word))   
 
