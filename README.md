@@ -3,6 +3,8 @@
 1. **Gif Generator** - converts video to gif. Made with OpenCV. 
  Run ```python script.py``` 
 
-2. **Word explanation** - find meaning of any word. 
+2. **Word Explanation** - finds meaning of any word. 
  Run ```python script.py``` 
+
+ 3. **Face Detection** - detects faces on pictures. Made with OpenCV
 
