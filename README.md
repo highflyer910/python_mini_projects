@@ -6,5 +6,8 @@
 2. **Word Explanation** - finds meaning of any word. 
  Run ```python script.py``` 
 
- 3. **Face Detection** - detects faces on pictures. Made with OpenCV
+3. **Face Detection** - detects faces on pictures. Made with OpenCV
+
+4. **URL Shortener** - Made using Pyshorteners lib
+ Run ```python script.py``` 
 
