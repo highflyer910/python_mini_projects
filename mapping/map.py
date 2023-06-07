@@ -6,6 +6,14 @@ map = folium.Map(location = [40.7864, 17.2409], zoom_start=6, tiles = "OpenStree
 
 fgv = folium.FeatureGroup(name="To Visit")
 
+fgv.add_child(
+    folium.Marker(
+        location=[40.7864, 17.2409],
+        popup="Arbelobello,Italy",
+        icon=folium.Icon(color="blue", icon="briefcase"),
+    )
+)
+
 fgv.add_child(folium.Marker(location = [40.7864, 17.2409], popup = "Arbelobello,Italy", icon = folium.Icon(color="cadetblue", icon="briefcase")))
 fgv.add_child(folium.Marker(location = [43.7696, 11.2558], popup = "Florence,Italy", icon = folium.Icon(color="cadetblue", icon="briefcase")))
 fgv.add_child(folium.Marker(location = [43.8429, 10.5027], popup = "Lucca,Italy", icon = folium.Icon(color="cadetblue", icon="briefcase")))
@@ -29,10 +37,13 @@ fgv.add_child(folium.Marker(location = [41.9047, 12.4547], popup = "Vatican City
 
 fgp = folium.FeatureGroup(name="Population")
 
-fgp.add_child(folium.GeoJson(data=open('world.json', 'r', encoding='utf-8-sig').read(),
-style_function=lambda x: {'fillColor':'green' if x['properties']['POP2005'] < 10000000
-else 'orange' if 10000000 <= x['properties']['POP2005'] < 20000000 else 'red'}))
-
+with open('world.json', 'r', encoding='utf-8-sig') as file:
+    fgp.add_child(folium.GeoJson(data=file.read(),
+                                style_function=lambda x: {
+                                    'fillColor': 'green' if x['properties']['POP2005'] < 10000000
+                                    else 'orange' if 10000000 <= x['properties']['POP2005'] < 20000000 else 'red'}
+                                )
+                  )
 
 map.add_child(fgv)
 map.add_child(fgp)
